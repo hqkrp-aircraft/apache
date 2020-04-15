@@ -1,0 +1,19 @@
+name: BUILD-APACHE
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '4/9 * * * *'
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: LINUX debug
+      run: .  ./unixulm
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: LINUX main
+      run: source ./unixulm
